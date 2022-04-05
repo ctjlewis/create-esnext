@@ -11,6 +11,10 @@ export const init = async () => {
     stdio: ["ignore", "ignore", "inherit"],
   });
 
+  if (existsSync("package.json")) {
+    throw new Error(`${resolve(process.cwd(), "package.json")} already exists`);
+  }
+
   await shell.run("npm init -y");
 
   /**

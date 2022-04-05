@@ -1,35 +1,25 @@
-# `tsmodule` library
+# Create ESNext Module
 
-This is a [`tsmodule`](https://github.com/tsmodule/tsmodule) library. By
-default, it is assumed to be a Node program, but this can be adjusted via the
-`platform` field in package.json.
+See ["Is there a way to "npm init" an ES module?"](https://stackoverflow.com/questions/62930247/is-there-a-way-to-npm-init-an-es-module/71751019#71751019).
 
-### Develop
+### Usage
 
-Rebuild on changes with `tsmodule dev` or the `yarn dev` script:
+Install `create-esnext` globally:
 
 ```bash
-yarn dev
-# calls `tsmodule dev`
+yarn global add create-esnext
+
+# or
+
+npm i -g create-esnext
 ```
 
-### Export and publish
-
-To export your component library, use `tsmodule build` or the `yarn build`
-script:
+In the folder where you want to create a package.json, run:
 
 ```bash
-yarn build
-# calls `tsmodule build`
+yarn create esnext
+
+# or 
+
+npm init esnext
 ```
-
-You can then publish to NPM:
-
-```bash
-yarn publish
-```
-
-#### Importing from your library
-
-All index exports, e.g. `src/example/index.tsx` will be available downstream
-via `import ... from "my-library/example"`.
